@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&family=Righteous&display=swap');
+
+.col {
+    text-align: left !important;
+}
+
+.service-card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    font-family: 'Poppins', sans-serif;
+    border-radius: 15px;
+}
+
+.service-card img {
+    border-radius: 15px;
+}
+
+.service-card h5 {
+    color: #ff6348;
+}
+
+.card-desc {
+    color: #8395a7;
+}
+
+.card-info {
+    justify-content: space-between;
+}
+
+.fa-calendar-alt {
+    margin-right: 5px;
+}
