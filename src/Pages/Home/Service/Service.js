@@ -1,6 +1,6 @@
 import React from 'react';
 import './Service.css';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Service = (props) => {
     const { service } = props;

@@ -1,14 +1,16 @@
 import React from 'react';
+import useAuth from '../../hooks/useAuth';
 import './PlaceOrder.css'
 
 const PlaceOrder = () => {
+    const {user} = useAuth();
     return (
         <div>
             <h1 className="my-5">Book Now</h1>
             <form class="place-order p-4 row g-3 w-25 m-auto text-start">
                 <div class="col-md-6">
                     <label for="inputEmail4" class="form-label">Email</label>
-                    <input type="email" class="form-control" id="inputEmail4"/>
+                    <input type="email" value={user.email} class="form-control" id="inputEmail4"/>
                 </div>
                 <div class="col-md-6">
                     <label for="inputPassword4" class="form-label">Password</label>
