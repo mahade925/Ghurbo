@@ -3,6 +3,7 @@ import './App.css';
 import AuthProvider from './contexts/AuthProvider';
 import Home from './Pages/Home/Home/Home';
 import LogIn from './Pages/LogIn/LogIn';
+import MyOrders from './Pages/MyOrders/MyOrders';
 import PlaceOrder from './Pages/PlaceOrder/PlaceOrder';
 import PrivateRoute from './Pages/PrivateRoute/PrivateRoute';
 import Footer from './Pages/Shared/Footer/Footer';
@@ -22,8 +23,11 @@ function App() {
             <Route path="/home">
               <Home></Home>
             </Route>
-            <PrivateRoute path="/placeorder">
+            <PrivateRoute path="/placeorder/:serviceId">
               <PlaceOrder></PlaceOrder>
+            </PrivateRoute>
+            <PrivateRoute path="/myorders">
+              <MyOrders></MyOrders>
             </PrivateRoute>
             <Route path="/login">
               <LogIn></LogIn>

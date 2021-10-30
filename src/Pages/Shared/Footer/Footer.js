@@ -44,11 +44,11 @@ const Footer = () => {
                     <span>About the company</span>
                     We offer to tour some beoutifule palces so have a trip with us</p>
                 <div className="footer-icons">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i className="fab fa-facebook-f"></i></a>
+                    <a href="#"><i className="fab fa-twitter"></i></a>
+                    <a href="#"><i className="fab fa-instagram"></i></a>
+                    <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i className="fab fa-youtube"></i></a>
                 </div>
             </div>
             </div>
