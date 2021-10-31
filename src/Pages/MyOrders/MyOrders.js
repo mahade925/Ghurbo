@@ -48,6 +48,7 @@ const MyOrders = () => {
                                 <h6>Date : {myOrder.date}</h6>
                                 <h6>Phone : {myOrder.phone}</h6>
                                 <p class="card-text">Message : {myOrder.message}</p>
+                                <h5 className="mb-3">Status : {myOrder.status}</h5>
                                 <button className="btn btn-danger" onClick={() => handleDeletOrder(myOrder._id)}>Delete</button>
                             </div>
                         </div>

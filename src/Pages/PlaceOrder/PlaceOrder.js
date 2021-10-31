@@ -28,6 +28,7 @@ const PlaceOrder = () => {
             phone: phone,
             date: startDate,
             message: message,
+            status: 'pending',
             serviceId: serviceId
         }
 

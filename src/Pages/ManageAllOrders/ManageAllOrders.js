@@ -9,7 +9,7 @@ const ManageAllOrders = () => {
         fetch('http://localhost:5000/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
-    }, []);
+    }, [orders]);
 
     // Delete an Order
     const handleDeletOrder = id => {
@@ -29,6 +29,23 @@ const ManageAllOrders = () => {
                 })
         }
     }
+
+    const handleApprove = id => {
+        const url = `http://localhost:5000/orders/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(orders)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if(data.modifiedCount > 0) {
+                    alert('Updated Successfully.')
+                }
+            })
+    }
     return (
         <div>
             <h1>Manage All Orders</h1>
@@ -42,7 +59,9 @@ const ManageAllOrders = () => {
                                 <h6>Date : {order.date}</h6>
                                 <h6>Phone : {order.phone}</h6>
                                 <p class="card-text">Message : {order.message}</p>
-                                <button className="btn btn-danger" onClick={() => handleDeletOrder(order._id)}>Delete</button>
+                                <h5 className="mb-3">Status : {order.status}</h5>
+                                <button className="btn btn-danger m-2" onClick={() => handleDeletOrder(order._id)}>Delete</button>
+                                <button className="btn btn-primary" onClick={() => handleApprove(order._id)}>Approve</button>
                             </div>
                         </div>
                     </div>)
