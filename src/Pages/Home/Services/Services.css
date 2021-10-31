@@ -1,0 +1,6 @@
+@media (max-width: 768px) {
+    .row {
+        width: 100% !important;
+        margin: auto !important;
+    }
+}

@@ -59,7 +59,7 @@ const PlaceOrder = () => {
     
 
     return (
-        <div className="d-flex h-100">
+        <div className="book-now-page d-flex h-100">
             <div className="service-detail w-50 p-5 text-start">
                 <img src={service?.img} className="w-75" alt="" />
                 <h2 className="my-4 text-danger">{service?.name}</h2>
@@ -67,7 +67,7 @@ const PlaceOrder = () => {
                 <p><i className="far fa-calendar-alt"></i>{service?.days}</p>
                 <h2>{service?.price}</h2>
             </div>
-            <div className="w-50">
+            <div className="book-now-form w-50">
                 <h1 className="my-5">Book Now</h1>
                 <form onSubmit={handleBookNow} class="place-order p-4 row g-3 w-50 m-auto text-start">
                     <div class="col-md-12">

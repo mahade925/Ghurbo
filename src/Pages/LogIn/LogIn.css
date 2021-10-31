@@ -3,3 +3,9 @@
     font-size: 20px;
     text-decoration: none;
 }
+
+@media (max-width: 768px) {
+    .login-form {
+        width: 90% !important;
+    }
+}

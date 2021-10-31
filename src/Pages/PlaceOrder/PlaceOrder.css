@@ -12,3 +12,17 @@
     border: 1px solid #ced4da;
     padding: 0.375rem 0.75rem;
 }
+
+@media (max-width: 768px) {
+    .book-now-page {
+        width: 90% !important;
+        display: block !important;
+    }
+    .service-detail {
+        width: 100% !important;
+    }
+    .book-now-form {
+        margin: auto !important;
+        width: 100% !important;
+    }
+}

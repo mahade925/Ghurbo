@@ -26,7 +26,7 @@ const AddNewService = () => {
     }
 
     const handleAddService = () => {
-        const serviceInfo = {img, name, desc, days, price}
+        const serviceInfo = {img, name, desc, days, price, status: 'pending'}
         axios.post('http://localhost:5000/services', serviceInfo)
         .then(res => {
             if(res.data.insertedId) {
@@ -38,7 +38,7 @@ const AddNewService = () => {
     return (
         <div>
             <h1 className="my-5">Add New Service</h1>
-            <div className="container text-start w-25">
+            <div className="add-service container text-start w-25">
                 <div class="mb-3">
                     <label htmlFor="formGroupExampleInput2" class="form-label">Service Image</label>
                     <input type="text" onBlur={handleImg} class="form-control" id="formGroupExampleInput2" placeholder="Service Image" />

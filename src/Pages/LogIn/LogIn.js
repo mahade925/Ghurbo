@@ -18,7 +18,7 @@ const LogIn = () => {
     return (
         <div>
             <h1 className="my-5">Login</h1>
-            <div class="place-order p-4 row g-3 w-25 m-auto text-start">
+            <div class="place-order login-form p-4 row g-3 w-25 m-auto text-start">
                 <div class="col-12">
                     <label htmlFor="inputEmail4" class="form-label">Email</label>
                     <input type="email" onBlur={handleEmail} placeholder="email" class="form-control" id="inputEmail4" />
