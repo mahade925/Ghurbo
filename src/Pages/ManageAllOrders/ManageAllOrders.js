@@ -1,11 +1,8 @@
-import { logDOM } from '@testing-library/dom';
-import React from 'react';
-import { useEffect, useState } from 'react/cjs/react.development';
+import React, { useEffect, useState } from 'react';
 import useAuth from '../../hooks/useAuth';
-import './MyOrders.css'
+import './ManageAllOrders'
 
-const MyOrders = () => {
-    const { user } = useAuth();
+const ManageAllOrders = () => {
     const [orders, setOrders] = useState([])
 
     useEffect(() => {
@@ -13,8 +10,6 @@ const MyOrders = () => {
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
-
-    const myOrders = orders.filter(order => order.email === user.email);
 
     // Delete an Order
     const handleDeletOrder = id => {
@@ -34,21 +29,20 @@ const MyOrders = () => {
                 })
         }
     }
-
     return (
         <div>
-            <h3 className="my-5">List of my orders</h3>
+            <h1>Manage All Orders</h1>
             <div className="row row-cols-1 row-cols-md-3 g-4 w-75 m-auto">
                 {
-                    myOrders.map(myOrder => <div className="col">
+                    orders.map(order => <div className="col">
                         <div class="card border-info mb-3">
                             <div class="card-body">
-                                <h5 class="card-title">Name : {myOrder.name}</h5>
-                                <h6>Email : {myOrder.email}</h6>
-                                <h6>Date : {myOrder.date}</h6>
-                                <h6>Phone : {myOrder.phone}</h6>
-                                <p class="card-text">Message : {myOrder.message}</p>
-                                <button className="btn btn-danger" onClick={() => handleDeletOrder(myOrder._id)}>Delete</button>
+                                <h5 class="card-title">Name : {order.name}</h5>
+                                <h6>Email : {order.email}</h6>
+                                <h6>Date : {order.date}</h6>
+                                <h6>Phone : {order.phone}</h6>
+                                <p class="card-text">Message : {order.message}</p>
+                                <button className="btn btn-danger" onClick={() => handleDeletOrder(order._id)}>Delete</button>
                             </div>
                         </div>
                     </div>)
@@ -58,4 +52,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ManageAllOrders;

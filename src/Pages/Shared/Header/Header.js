@@ -26,8 +26,8 @@ const Header = () => {
                             {
                                 user.email ? <li className="nav-item">
                                     <Link to="/myorders" className="nav-link">My orders</Link>
-                                    <Link to="/login" className="nav-link">Manage All Orders</Link>
-                                    <Link to="/login" className="nav-link">Add a new service</Link>
+                                    <Link to="/manageallorders" className="nav-link">Manage All Orders</Link>
+                                    <Link to="/addnewservice" className="nav-link">Add a new service</Link>
                                     <Link to="" className="nav-link">Signed as : {user.email}</Link>
                                     <button className="btn btn-danger" onClick={logOut}>Log Out</button>
                                 </li> : <li>

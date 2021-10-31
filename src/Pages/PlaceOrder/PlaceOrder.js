@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import { useEffect } from 'react/cjs/react.development';
 import useAuth from '../../hooks/useAuth';
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 import './PlaceOrder.css'
 
 const PlaceOrder = () => {
@@ -10,6 +12,7 @@ const PlaceOrder = () => {
     const { serviceId } = useParams();
     const [phone, setPhone] = useState('');
     const [date, setDate] = useState('');
+    const [startDate, setStartDate] = useState(new Date());
     const [message, setMessage] = useState('');
 
     useEffect(() => {
@@ -23,7 +26,7 @@ const PlaceOrder = () => {
             email: user.email,
             name: user.displayName,
             phone: phone,
-            date: date,
+            date: startDate,
             message: message,
             serviceId: serviceId
         }
@@ -36,7 +39,11 @@ const PlaceOrder = () => {
             body: JSON.stringify(BookNowInfo)
         })
             .then(res => res.json())
-            .then(result => console.log(result))
+            .then(result => {
+                if(result.insertedId) {
+                    alert('Booked Successfully')
+                }
+            })
 
         console.log(BookNowInfo);
 
@@ -45,9 +52,6 @@ const PlaceOrder = () => {
 
     const handlePhone = e => {
         setPhone(e.target.value);
-    }
-    const handleDate = e => {
-        setDate(e.target.value);
     }
     const handleMessage = e => {
         setMessage(e.target.value);
@@ -80,7 +84,7 @@ const PlaceOrder = () => {
                     </div>
                     <div class="col-12">
                         <label htmlFor="inputAddress" class="form-label">Date</label>
-                        <input type="text" onBlur={handleDate} class="form-control" id="inputAddress" placeholder="mm/dd/yy" />
+                        <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} className="date-picker" />
                     </div>
                     <div class="mb-3">
                         <label htmlFor="exampleFormControlTextarea1" class="form-label">Message</label>
