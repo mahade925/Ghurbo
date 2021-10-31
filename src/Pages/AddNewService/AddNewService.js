@@ -27,7 +27,7 @@ const AddNewService = () => {
 
     const handleAddService = () => {
         const serviceInfo = {img, name, desc, days, price, status: 'pending'}
-        axios.post('http://localhost:5000/services', serviceInfo)
+        axios.post('https://ghostly-cemetery-48204.herokuapp.com/services', serviceInfo)
         .then(res => {
             if(res.data.insertedId) {
                 alert('Added Successfully')

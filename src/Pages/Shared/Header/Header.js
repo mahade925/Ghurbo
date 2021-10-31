@@ -2,6 +2,7 @@ import React from 'react';
 import './Header.css';
 import { NavLink, Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
+import { HashLink } from 'react-router-hash-link';
 
 const Header = () => {
     const { user, logOut } = useAuth();
@@ -21,7 +22,7 @@ const Header = () => {
                                 <Link to="/home" className="nav-link">Home</Link>
                             </li>
                             <li className="nav-item">
-                                <Link to="/destinations" className="nav-link">Destinations</Link>
+                                <HashLink to="/home#services" className="nav-link">Services</HashLink>
                             </li>
                             {
                                 user.email ? <li className="nav-item">

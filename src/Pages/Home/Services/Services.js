@@ -5,12 +5,12 @@ import './Services.css';
 const Services = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/services')
+        fetch('https://ghostly-cemetery-48204.herokuapp.com/services')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
     return (
-        <div className="services-cotainer container my-5">
+        <div className="services-cotainer container my-5" id="services">
             <h1 className="mb-5">Services</h1>
             <div class="row row-cols-1 row-cols-md-3 g-5">
                 {
